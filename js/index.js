@@ -206,17 +206,17 @@ function produtosNoCart(data) {
 
     cart.appendChild(li);
 
-    li.addEventListener("click", function (e) {
+    li.addEventListener("click", function () {
 
         li.remove();
-
-        let cartProducts = cart.children
 
         quantidadeItens--;
         valorTotal -= data.value;
 
         qtd.innerText = quantidadeItens;
         total.innerText = `R$ ${valorTotal.toFixed(2)}`;
+
+        let cartProducts = cart.children
 
         if (cartProducts.length === 0) {
             cart.appendChild(carrinhoVazio);
