@@ -153,13 +153,12 @@ for (let i = 0; i < addToCartButton.length; i++) {
 
         produtosNoCart(produto);
 
-        carrinhoVazio.remove();
-
         quantidadeItens++
         qtd.innerText = quantidadeItens
-
         valorTotal += data[i].value;
         total.innerText = `R$ ${valorTotal.toFixed(2)}`;
+
+        carrinhoVazio.remove();
 
         if (cart.children.length === 1) {
             divCounterESoma.style.visibility = 'visible';
@@ -212,7 +211,6 @@ function produtosNoCart(data) {
 
         quantidadeItens--;
         valorTotal -= data.value;
-
         qtd.innerText = quantidadeItens;
         total.innerText = `R$ ${valorTotal.toFixed(2)}`;
 
@@ -224,6 +222,3 @@ function produtosNoCart(data) {
         }
     })
 }
-
-
-
