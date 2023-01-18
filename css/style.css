@@ -102,11 +102,10 @@ nav button:hover {
     background-color: rgb(245, 245, 245);
     border: 2px solid white;
     width: 260px;
-    height: 415px;
     padding: 2px;
     border-radius: 8px;
     transition-duration: 0.3s;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .produto:hover {
@@ -124,6 +123,7 @@ nav button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    object-fit: cover;
 }
 
 .produto h3 {
@@ -142,7 +142,7 @@ nav button:hover {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
-    padding: 10px 2px;
+    padding: 15px 2px;
     background-color: white;
 }
 
@@ -320,6 +320,3 @@ span {
     justify-content: center;
 }
 
-img {
-    height: 140px;
-}
