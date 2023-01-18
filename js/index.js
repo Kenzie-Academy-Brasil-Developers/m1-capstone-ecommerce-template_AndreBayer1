@@ -196,7 +196,6 @@ function produtosNoCart(data) {
     removerProduto.classList.add("removerDoCarrinho");
     removerProduto.innerText = "Remover do carrinho";
 
-
     li.appendChild(figure);
     li.appendChild(section);
     figure.appendChild(img);
@@ -207,11 +206,11 @@ function produtosNoCart(data) {
 
     cart.appendChild(li);
 
-    removerProduto.addEventListener("click", function (e) {
+    li.addEventListener("click", function (e) {
 
-        let li = document.querySelector("body > main > div:nth-child(2) > div > ul > li");
-        e.li
-        console.log(li);
+        li.remove();
+
+        let cartProducts = cart.children
 
         quantidadeItens--;
         valorTotal -= data.value;
@@ -219,13 +218,12 @@ function produtosNoCart(data) {
         qtd.innerText = quantidadeItens;
         total.innerText = `R$ ${valorTotal.toFixed(2)}`;
 
-        li.remove();
-
-        if (cart.children.length === 0) {
+        if (cartProducts.length === 0) {
             cart.appendChild(carrinhoVazio);
             divCounterESoma.remove(productCart);
         }
     })
 }
+
 
 

@@ -100,15 +100,5 @@ const data = [
     value: 100,
     addCart: "Adicionar ao carrinho",
     tag: ["Camisetas"],
-  },
-  {
-    id: 5,
-    img: "../img/camiseta_branca.svg",
-    nameItem: "Short-Sleeve T-Shirt",
-    description:
-      "Agora você encontrou a camiseta básica do seu guarda-roupa. É feito de um mais grosso...",
-    value: 100,
-    addCart: "Adicionar ao carrinho",
-    tag: ["Camisetas"],
-  },
+  }
 ];
