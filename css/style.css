@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+
+/* --------------------- Config Gerais -------------------------*/
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0 auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #2E245E;
+    border-radius: 8px;
+}
+
+
+
+
+/* --------------------- Cabeçalho -------------------------*/
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.logoNome {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-left: 2px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav ul {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+}
+
+nav button {
+    background-color: white;
+    cursor: pointer;
+    color: #2E245E;
+}
+
+nav button:hover {
+    text-decoration: underline;
+}
+
+
+/* --------------------- Main -------------------------*/
+
+
+.alinhamento {
+    display: flex;
+    max-width: 1200px;
+    ;
+    margin: 0 auto;
+}
+
+
+/* --------------------- Vitrine e cards de produtos -------------------------*/
+
+.vitrineProdutos {
+    display: flex;
+    list-style: none;
+    margin-top: 20px;
+    width: 860px;
+    height: 90vh;
+    gap: 12px;
+    overflow-y: auto;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(245, 245, 245);
+    border: 2px solid white;
+    width: 260px;
+    height: 415px;
+    padding: 2px;
+    border-radius: 8px;
+    transition-duration: 0.3s;
+    justify-content: space-around;
+}
+
+.produto:hover {
+    cursor: pointer;
+    border: 2px solid #37268c;
+    transform: translateY(-0.5px);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.produto:active {
+    transform: translateY(2px);
+}
+
+.produto figure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produto h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.valor {
+    color: #2E245E;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.infoProduto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 10px 2px;
+    background-color: white;
+}
+
+.infoProduto p {
+    color: #828282;
+    font-size: 14px;
+}
+
+.categoria {
+    border-radius: 6px;
+    background-color: #2E245E;
+    color: white;
+    padding: 5px 8px;
+    font-size: 16px;
+}
+
+.addToCart {
+    background-color: white;
+    color: #333333;
+}
+
+.addToCart:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: blue;
+}
+
+
+
+/* --------------------- Barra de Pesquisa -------------------------*/
+
+.searchBar {
+    display: flex;
+    height: 50px;
+    margin-bottom: 20px;
+    width: 330px;
+    justify-content: space-between;
+}
+
+.boxPesquisa {
+    padding: 5px;
+    width: 65%;
+    background-color: #F5F5F5;
+}
+
+.boxPesquisa:hover {
+    border: 1px solid #2E245E;
+}
+
+.search {
+    padding: 12px;
+    background-color: #37268C;
+    color: white;
+    border-radius: 8px;
+}
+
+.search:hover {
+    cursor: pointer;
+}
+
+.search:active {
+    transform: translateY(2px);
+}
+
+
+
+/* --------------------- Carrinho -------------------------*/
+
+.productCart {
+    margin-top: 20px;
+    margin-left: 15px;
+
+}
+
+.productCart span {
+    background-color: #37268C;
+    color: white;
+    padding-block: 10px;
+}
+
+.cart {
+    overflow-y: auto;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #F5F5F5;
+    height: 200px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 30px;
+    padding: 15px
+}
+
+
+/* --------------------- Vitrine do Carrinho -------------------------*/
+
+.inCartProduct {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    align-items: center;
+}
+
+.inCartProduct figure {
+    height: 75px;
+    background-color: white;
+}
+
+.inCartImg {
+    width: 80px;
+    height: 80px;
+}
+
+.infoItem {
+    display: flex;
+    margin-left: 16px;
+    gap: 6px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.emptyCart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 65px 80px;
+}
+
+.emptyCart h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.removerDoCarrinho {
+    background-color: #F5F5F5;
+    color: #333333;
+}
+
+.removerDoCarrinho:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: red
+}
+
+
+/* --------------------- Caixa Qntd e Valor Total -------------------------*/
+
+
+.contadorESomaTotal {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 10px;
+    color: white;
+    background-color: #333333;
+    visibility: hidden;
+}
+
+.contador {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.somaTotal {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* --------------------- Outros -------------------------*/
+
+span {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    height: 140px;
+}
