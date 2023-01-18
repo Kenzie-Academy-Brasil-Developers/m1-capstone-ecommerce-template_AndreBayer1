@@ -150,7 +150,7 @@ for (let i = 0; i < addToCartButton.length; i++) {
         let idElemento = elemento.id;
         let id = parseInt(idElemento);
         let produto = procuraProduto(id);
-        
+
         produtosNoCart(produto);
 
         carrinhoVazio.remove();
