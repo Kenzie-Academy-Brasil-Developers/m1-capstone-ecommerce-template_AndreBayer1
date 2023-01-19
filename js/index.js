@@ -71,13 +71,18 @@ main.appendChild(div2);
 
 
 
-// ----------- funcao cria card produtos  ----------- //
+
+
+
+
+// ----------- Funcao cria card produtos  ----------- //
 
 
 function criaCard(data) {
 
     let li = document.createElement("li");
     li.classList.add("produto");
+
 
     li.innerHTML =
         `<figure>
@@ -95,17 +100,18 @@ function criaCard(data) {
 }
 
 
-// ----------- funcao cria vitrine com produtos ----------- //
+// ----------- Funcao Render => cria vitrine com produtos ----------- //
 
 
 let vitrineProdutos = document.querySelector(".vitrineProdutos")
 
-function listaVitrine(arr, parent) {
-    for (let i = 0; i < arr.length; i++) {
-        let produto = arr[i];
+function listaVitrine(data, vitrineProdutos) {
+    for (let i = 0; i < data.length; i++) {
+        let produto = data[i];
 
         let card = criaCard(produto);
-        parent.appendChild(card);
+        vitrineProdutos.appendChild(card);
+
     }
 }
 listaVitrine(data, vitrineProdutos);
@@ -141,32 +147,33 @@ let total = document.querySelector(".somaTotalProdutos");
 let quantidadeItens = 0;
 let valorTotal = 0;
 
-for (let i = 0; i < addToCartButton.length; i++) {
+function addCartBtn(addToCartButton) {
 
-    let btn = addToCartButton[i];
-    btn.addEventListener("click", function (e) {
+    for (let i = 0; i < addToCartButton.length; i++) {
+        let btn = addToCartButton[i];
+        btn.addEventListener("click", function (e) {
+            let elemento = e.target;
+            let idElemento = elemento.id;
+            let id = parseInt(idElemento);
+            let produto = procuraProduto(id);
 
-        let elemento = e.target;
-        let idElemento = elemento.id;
-        let id = parseInt(idElemento);
-        let produto = procuraProduto(id);
+            produtosNoCart(produto);
 
-        produtosNoCart(produto);
+            quantidadeItens++;
+            qtd.innerText = quantidadeItens;
+            valorTotal += data[i].value;
+            total.innerText = `R$ ${valorTotal.toFixed(2)}`;
 
-        quantidadeItens++
-        qtd.innerText = quantidadeItens
-        valorTotal += data[i].value;
-        total.innerText = `R$ ${valorTotal.toFixed(2)}`;
+            carrinhoVazio.remove();
 
-        carrinhoVazio.remove();
-
-        if (cart.children.length === 1) {
-            divCounterESoma.style.visibility = 'visible';
-            productCart.appendChild(divCounterESoma);
-        }
-    })
+            if (cart.children.length === 1) {
+                divCounterESoma.style.visibility = 'visible';
+                productCart.appendChild(divCounterESoma);
+            }
+        });
+    }
 }
-
+addCartBtn(addToCartButton);
 
 // ----------- config dos itens no carrinho + config botao remover do carrinho ----------- //
 
@@ -205,6 +212,7 @@ function produtosNoCart(data) {
 
     cart.appendChild(li);
 
+
     li.addEventListener("click", function () {
 
         li.remove();
@@ -221,4 +229,56 @@ function produtosNoCart(data) {
             divCounterESoma.remove(productCart);
         }
     })
+};
+
+
+// ----------- Config Filtro Botoes de Navegacao ----------- //
+
+
+
+function filtroData(data, vitrineProdutos) {
+
+
+    let camisetas = [];
+    let acessorios = [];
+    let calcados = [];
+
+    for (let i = 0; i < data.length; i++) {
+        if (data[i].tag[0].toLowerCase() == "camisetas") {
+            camisetas.push(data[i]);
+        } else if (data[i].tag[0].toLowerCase() == "acessórios") {
+            acessorios.push(data[i]);
+        } else if (data[i].tag[0].toLowerCase() == "calçados") {
+            calcados.push(data[i]);
+        } else { }
+    }
+
+    let botaoCamisetas = document.querySelector(".botaoCamisetas");
+    botaoCamisetas.addEventListener("click", function () {
+
+        vitrineProdutos.innerHTML = ""; listaVitrine(camisetas, vitrineProdutos);
+    })
+
+    let botaoAcessorios = document.querySelector(".botaoAcessorios");
+    botaoAcessorios.addEventListener("click", function () {
+
+        vitrineProdutos.innerHTML = "", listaVitrine(acessorios, vitrineProdutos);
+    })
+
+    let botaoCalcados = document.querySelector(".botaoCalcados");
+    botaoCalcados.addEventListener("click", function () {
+
+        vitrineProdutos.innerHTML = ""; listaVitrine(calcados, vitrineProdutos);
+    })
+
+    let botaoTodos = document.querySelector(".botaoTodos");
+    botaoTodos.addEventListener("click", function () {
+        vitrineProdutos.innerHTML = '', listaVitrine(data, vitrineProdutos);
+    })
+
 }
+filtroData(data, vitrineProdutos)
+
+
+
+
