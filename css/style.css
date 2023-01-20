@@ -6,6 +6,12 @@
 body {
     font-family: 'Inter', sans-serif;
     margin: 0 auto;
+    background-image: url("/img/419101.jpg");
+    background-color: #cccccc;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 * {
@@ -20,7 +26,7 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #2E245E;
+    background-color: rgba(255, 127, 80, 0.434);
     border-radius: 8px;
 }
 
@@ -33,16 +39,26 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 16px;
+    padding: 5px;
     margin-bottom: 10px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    
+}
+
+.alinhaMarca {
+    display: flex;
+    align-items: center;
 }
 
 .logoNome {
     font-size: 30px;
     font-weight: bolder;
     margin-left: 2px;
+}
+
+.logo {
+    height: 80px;
 }
 
 nav {
@@ -55,7 +71,7 @@ nav {
 
 nav ul {
     display: flex;
-    gap: 16px;
+    gap: 10px;
     list-style: none;
 }
 
@@ -65,7 +81,7 @@ nav button {
     color: #2E245E;
     font-weight: 900;
     font-size: larger;
-    margin: 6px;
+    margin: 2px;
     position: relative;
 }
 
@@ -75,7 +91,7 @@ nav button::before {
     width: 100%;
     height: 3px;
     border-radius: 4px;
-    background-color: #37268c;
+    background-color: orangered;
     bottom: 0;
     left: 0;
     transform-origin: right;
@@ -95,7 +111,6 @@ nav button:hover::before {
 .alinhamento {
     display: flex;
     max-width: 1200px;
-    ;
     margin: 0 auto;
 }
 
@@ -108,7 +123,7 @@ nav button:hover::before {
     margin-top: 20px;
     width: 860px;
     height: 90vh;
-    gap: 14px;
+    gap: 22px;
     overflow-y: auto;
     align-content: flex-start;
     flex-wrap: wrap;
@@ -118,7 +133,7 @@ nav button:hover::before {
 .produto {
     display: flex;
     flex-direction: column;
-    background-color: rgb(245, 245, 245);
+    background-color: rgba(245, 245, 245, 0.474);
     border: 2px solid white;
     width: 260px;
     padding: 2px;
@@ -129,7 +144,7 @@ nav button:hover::before {
 
 .produto:hover {
     cursor: pointer;
-    border: 2px solid #37268c;
+    border: 2px solid rgb(255, 68, 0);
     transform: translateY(-0.5px);
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
@@ -185,7 +200,6 @@ nav button:hover::before {
 
 .addToCart:hover {
     cursor: pointer;
-    text-decoration: underline;
     color: blue;
 }
 
@@ -205,21 +219,24 @@ nav button:hover::before {
     padding: 5px;
     width: 65%;
     background-color: #F5F5F5;
+    border-radius: 8px;
 }
 
 .boxPesquisa:hover {
-    border: 1px solid #2E245E;
+    border: 1px solid #37268C;
 }
 
 .search {
     padding: 12px;
-    background-color: #37268C;
+    background-color: rgba(255, 127, 80, 0.587);
     color: white;
     border-radius: 8px;
+    transition: 0.5s;
 }
 
 .search:hover {
     cursor: pointer;
+    background-color: rgb(255, 127, 80);
 }
 
 .search:active {
@@ -240,18 +257,20 @@ nav button:hover::before {
     background-color: #37268C;
     color: white;
     padding-block: 10px;
+    border-radius: 8px;
 }
 
 .cart {
     overflow-y: auto;
     display: flex;
     justify-content: flex-start;
-    background-color: #F5F5F5;
-    height: 200px;
+    background-color: rgba(245, 245, 245, 0.737);
+    height: 351px;
     align-items: flex-start;
     flex-direction: column;
     gap: 30px;
-    padding: 15px
+    padding: 11px;
+    border-radius: 8px;
 }
 
 
@@ -266,12 +285,12 @@ nav button:hover::before {
 
 .inCartProduct figure {
     height: 75px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .inCartImg {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 
 .infoItem {
@@ -295,7 +314,7 @@ nav button:hover::before {
 }
 
 .removerDoCarrinho {
-    background-color: #F5F5F5;
+    background-color: #f5f5f500;
     color: #333333;
 }
 
@@ -339,7 +358,11 @@ span {
     justify-content: center;
 }
 
-.infoItem p{
-    color:#37268C;
+.infoItem p {
+    color: #37268C;
     font-weight: bold;
+}
+
+img {
+    height: 95%;
 }

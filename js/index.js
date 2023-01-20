@@ -5,7 +5,10 @@ let body = document.querySelector(".body");
 let header = document.createElement('header');
 header.innerHTML =
     `<nav>
-<h1 class="logoNome">WearTake</h1>
+    <section class="alinhaMarca">
+<h1 class="logoNome">OnBoard</h1>
+<img class="logo" src="/img/freestyle-snowboard-vector-logo-design_215665-469.webp">
+</section>
 <ul>
     <li class="botaoNav">
         <button class="botaoTodos" id="todos">Todos</button>
@@ -14,7 +17,7 @@ header.innerHTML =
         <button class="botaoAcessorios" id="acessorios">Acessórios</button>
     </li>
     <li class="botaoNav">
-        <button class="botaoCalcados" id="calcados">Calçados</button>
+        <button class="botaoBoard" id="board">Boards</button>
     </li>
     <li class="botaoNav">
         <button class="botaoCamisetas" id="camisetas">Camisetas</button>
@@ -34,38 +37,10 @@ divVitrine.innerHTML =
 </ul>
 </div>`
 
+main.insertAdjacentElement("afterbegin", divVitrine);
 
-let divCarrinho = document.createElement('div');
-divCarrinho.innerHTML =
-    `
-    <div class="productCart">
-<div class="searchBar">
-    <input class="boxPesquisa" id="searchInput" placeholder="O que deseja pesquisar?" type="text">
-    <button class="search">Pesquisar</button>
-</div>
-<span>Carrinho de compras</span>
-<ul class="cart">
-    <div class="emptyCart">
-        <h1>Carrinho vazio</h1>
-        <p>Adicione itens</p>
-    </div>
-</ul>
-<div class="contadorESomaTotal">
-    <div class="contador">
-        <p>Quantidade:</p>
-        <p class="qtdProdutos">0</p>
-    </div>
-    <div class="somaTotal">
-        <p>Valor total:</p>
-        <p class="somaTotalProdutos">R$ 0.00</p>
-    </div>
-</div>
-</div>`;
 
-main.appendChild(divVitrine);
-main.appendChild(divCarrinho);
-
-// ----------- Funcao Render => cria vitrine com produtos ----------- //
+// ----------- Funcao Render Vitrine Principal ----------- //
 
 let vitrineProdutos = document.querySelector(".vitrineProdutos")
 
@@ -91,8 +66,10 @@ function procuraProduto(id) {
 
 // ----------- Config btn adicionar ao carrinho  ----------- //
 
+
+
 let quantidadeItens = 0;
-let valorTotal = 0;
+let somaProdutos = 0;
 let qtd = document.querySelector(".qtdProdutos");
 let total = document.querySelector(".somaTotalProdutos");
 let divCounterESoma = document.querySelector(".contadorESomaTotal");
@@ -102,7 +79,7 @@ let carrinhoVazio = document.querySelector(".emptyCart");
 
 function botaoAddCart(btn) {
 
-    btn.addEventListener("click", function (e) {
+    btn.addEventListener("click", (e) => {
 
         let elemento = e.target;
         let idElemento = elemento.id;
@@ -113,12 +90,13 @@ function botaoAddCart(btn) {
 
         quantidadeItens++;
         qtd.innerText = quantidadeItens;
+        somaProdutos += +btn.value;
+        total.innerText = `R$ ${somaProdutos.toFixed(2)}`;
+
+        //console.log(btn.value);
 
         let cartProducts = cart.children
-
         if (cartProducts.length >= 1) {
-            cart.appendChild(carrinhoVazio);
-            divCounterESoma.remove(productCart);
             carrinhoVazio.remove();
             divCounterESoma.style.visibility = 'visible';
             productCart.appendChild(divCounterESoma);
@@ -160,6 +138,7 @@ function criaCard(data) {
     btn.classList.add('addToCart');
     btn.id = data.id
     btn.innerText = `Adicionar ao carrinho`
+    btn.value = data.value;
 
     botaoAddCart(btn)
 
@@ -203,18 +182,21 @@ function produtosNoCart(data) {
     btn.classList.add("removerDoCarrinho");
     btn.innerText = "Remover do carrinho";
     btn.id = 'cart_' + data.id
+    btn.value = data.value;
 
-    btn.addEventListener("click", function (e) {
-        li.remove();
+    btn.addEventListener("click", () => {
 
         quantidadeItens--;
-        //valorTotal -= data.value;
         qtd.innerText = quantidadeItens;
-        //total.innerText = `R$ ${valorTotal.toFixed(2)}`;
+
+        somaProdutos -= `${+btn.value}`;
+        total.innerText = `R$ ${somaProdutos.toFixed(2)}`;
+
+
+        li.remove();
 
         let cartProducts = cart.children
-
-        if (cartProducts.length === 0) {
+        if (cartProducts.length <= 0) {
             cart.appendChild(carrinhoVazio);
             divCounterESoma.remove(productCart);
         }
@@ -249,20 +231,17 @@ function searchProducts() {
 
 let camisetas = [];
 let acessorios = [];
-let calcados = [];
+let board = [];
 
 for (let i = 0; i < data.length; i++) {
     if (data[i].tag[0].toLowerCase() == "camisetas") {
         camisetas.push(data[i]);
     } else if (data[i].tag[0].toLowerCase() == "acessórios") {
         acessorios.push(data[i]);
-    } else if (data[i].tag[0].toLowerCase() == "calçados") {
-        calcados.push(data[i]);
+    } else if (data[i].tag[0].toLowerCase() == "board") {
+        board.push(data[i]);
     }
 }
-
-console.log(camisetas);
-console.log(acessorios);
 
 let botaoCamisetas = document.querySelector("#camisetas");
 botaoCamisetas.addEventListener("click", function () {
@@ -276,10 +255,10 @@ botaoAcessorios.addEventListener("click", function () {
     vitrineProdutos.innerHTML = "", listaVitrine(acessorios, vitrineProdutos);
 })
 
-let botaoCalcados = document.querySelector("#calcados");
-botaoCalcados.addEventListener("click", function () {
+let botaoBoard = document.querySelector("#board");
+botaoBoard.addEventListener("click", function () {
 
-    vitrineProdutos.innerHTML = ""; listaVitrine(calcados, vitrineProdutos);
+    vitrineProdutos.innerHTML = ""; listaVitrine(board, vitrineProdutos);
 })
 
 let botaoTodos = document.querySelector("#todos");
@@ -288,3 +267,6 @@ botaoTodos.addEventListener("click", function () {
     vitrineProdutos.innerHTML = ""; listaVitrine(data, vitrineProdutos);
 })
 
+const test = document.querySelectorAll("button");
+
+console.log(test);

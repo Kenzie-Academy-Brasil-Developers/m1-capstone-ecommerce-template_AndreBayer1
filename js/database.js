@@ -60,5 +60,45 @@ const data = [
     value: 100,
     addCart: "Adicionar ao carrinho",
     tag: ["Camisetas"],
+  },
+  {
+    id: 7,
+    img: "./img/download-removebg-preview.png",
+    nameItem: "Rose Blue Board",
+    description:
+      "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...",
+    value: 400,
+    addCart: "Adicionar ao carrinho",
+    tag: ["Board"],
+  },
+  {
+    id: 8,
+    img: "./img/BlackOrange.png",
+    nameItem: "Black-Orange Board",
+    description:
+      "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...",
+    value: 350,
+    addCart: "Adicionar ao carrinho",
+    tag: ["Board"],
+  },
+  {
+    id: 9,
+    img: "./img/cartoon.png",
+    nameItem: "Pink-Floral Board",
+    description:
+      "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...",
+    value: 400,
+    addCart: "Adicionar ao carrinho",
+    tag: ["Board"],
+  },
+  {
+    id: 10,
+    img: "./img/doida.png",
+    nameItem: "Rainbow Board",
+    description:
+      "Proteja-se dos elementos com esta jaqueta embalável Champion. Esta jaqueta de poliést...",
+    value: 500,
+    addCart: "Adicionar ao carrinho",
+    tag: ["Board"],
   }
 ];
