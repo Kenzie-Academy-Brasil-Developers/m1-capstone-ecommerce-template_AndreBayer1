@@ -64,7 +64,7 @@ nav button {
     cursor: pointer;
     color: #2E245E;
     font-weight: 900;
-    font-size:larger;
+    font-size: larger;
     margin: 6px;
     position: relative;
 }
@@ -108,7 +108,7 @@ nav button:hover::before {
     margin-top: 20px;
     width: 860px;
     height: 90vh;
-    gap: 12px;
+    gap: 14px;
     overflow-y: auto;
     align-content: flex-start;
     flex-wrap: wrap;
@@ -337,4 +337,9 @@ nav button:hover::before {
 span {
     display: flex;
     justify-content: center;
+}
+
+.infoItem p{
+    color:#37268C;
+    font-weight: bold;
 }
