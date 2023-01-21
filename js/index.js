@@ -189,7 +189,7 @@ function produtosNoCart(data) {
         quantidadeItens--;
         qtd.innerText = quantidadeItens;
 
-        somaProdutos -= `${+btn.value}`;
+        somaProdutos -= +btn.value;
         total.innerText = `R$ ${somaProdutos.toFixed(2)}`;
 
 

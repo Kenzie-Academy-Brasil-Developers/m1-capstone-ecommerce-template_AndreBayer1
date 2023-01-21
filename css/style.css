@@ -6,7 +6,7 @@
 body {
     font-family: 'Inter', sans-serif;
     margin: 0 auto;
-    background-image: url("/img/419101.jpg");
+    background-image: url("/img/teste\ 8.jpg");
     background-color: #cccccc;
     height: 100vh;
     background-position: center;
@@ -231,19 +231,19 @@ nav button:hover::before {
 
 .search {
     padding: 12px;
-    background-color: rgba(255, 127, 80, 0.587);
+    background-color: #37268C;;
     color: white;
     border-radius: 8px;
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 .search:hover {
     cursor: pointer;
-    background-color: rgb(255, 127, 80);
+    background-color: rgb(250, 94, 37);
 }
 
 .search:active {
-    transform: translateY(2px);
+    transform: translateY(5px);
 }
 
 
@@ -267,7 +267,7 @@ nav button:hover::before {
     overflow-y: auto;
     display: flex;
     justify-content: flex-start;
-    background-color: rgba(245, 245, 245, 0.737);
+    background-color: rgba(245, 245, 245, 0.869);
     height: 351px;
     align-items: flex-start;
     flex-direction: column;
