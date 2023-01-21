@@ -26,7 +26,7 @@ body {
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 127, 80, 0.434);
+    background-color: rgba(255, 127, 80, 0.672);
     border-radius: 8px;
 }
 
@@ -71,7 +71,7 @@ nav {
 
 nav ul {
     display: flex;
-    gap: 10px;
+    gap: 18px;
     list-style: none;
 }
 
@@ -79,7 +79,7 @@ nav button {
     background-color: white;
     cursor: pointer;
     color: #2E245E;
-    font-weight: 900;
+    font-weight: 700;
     font-size: larger;
     margin: 2px;
     position: relative;
@@ -89,8 +89,8 @@ nav button::before {
     content: '';
     position: absolute;
     width: 100%;
-    height: 3px;
-    border-radius: 4px;
+    height: 2px;
+    border-radius: 2px;
     background-color: orangered;
     bottom: 0;
     left: 0;
@@ -133,24 +133,22 @@ nav button:hover::before {
 .produto {
     display: flex;
     flex-direction: column;
-    background-color: rgba(245, 245, 245, 0.474);
-    border: 2px solid white;
+    background-color: rgba(245, 245, 245, 0.501);
     width: 260px;
     padding: 2px;
     border-radius: 8px;
-    transition-duration: 0.3s;
+    transition-duration: 0.5s;
     justify-content: space-between;
 }
 
 .produto:hover {
     cursor: pointer;
-    border: 2px solid rgb(255, 68, 0);
-    transform: translateY(-0.5px);
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    transform: translateY(-4px);
+    box-shadow: 2px 5px 10px 1px rgba(0, 0, 0, 0.5);
 }
 
 .produto:active {
-    transform: translateY(2px);
+    transform: translateY(4px);
 }
 
 .produto figure {
@@ -158,6 +156,7 @@ nav button:hover::before {
     justify-content: center;
     align-items: center;
     object-fit: cover;
+    height: 160px;
 }
 
 .produto h3 {
@@ -194,13 +193,20 @@ nav button:hover::before {
 }
 
 .addToCart {
-    background-color: white;
-    color: #333333;
+    display: flex;
+    background-color: rgba(255, 255, 0, 0.582);
+    color: #000000;
+    height: 23px;
+    width: 256px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .addToCart:hover {
     cursor: pointer;
-    color: blue;
+    background-color: orange;
+
 }
 
 
@@ -222,9 +228,6 @@ nav button:hover::before {
     border-radius: 8px;
 }
 
-.boxPesquisa:hover {
-    border: 1px solid #37268C;
-}
 
 .search {
     padding: 12px;
@@ -353,6 +356,7 @@ nav button:hover::before {
 
 /* --------------------- Outros -------------------------*/
 
+
 span {
     display: flex;
     justify-content: center;
@@ -365,4 +369,8 @@ span {
 
 img {
     height: 95%;
+}
+
+.icon{
+    display: inline-flex;
 }
