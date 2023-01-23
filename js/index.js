@@ -227,6 +227,20 @@ function searchProducts() {
 }
 
 
+// ----------- Botao finalizar compra ----------- //
+
+let item = document.querySelectorAll('.inCartProduct');
+
+let btnFinalizar = document.querySelector('.finalizar');
+btnFinalizar.addEventListener('click', (e)=>{
+    
+
+    alert(`O valor total da sua compra é de R$ ${somaProdutos.toFixed(2)} `);
+    window.location.reload();
+
+})
+
+
 // ----------- Filtro Botoes de Navegacao ----------- //
 
 let camisetas = [];

@@ -7,12 +7,12 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0 auto;
     background-image: url("/img/teste\ 8.jpg");
-    background-color: #cccccc;
     height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 * {
     margin: 0;
@@ -352,6 +352,24 @@ nav button:hover::before {
     justify-content: space-between;
 }
 
+.finalizar{
+    color: white;
+    background-color: #37268C;
+    height: 59px;
+    width: 311px;
+    border-radius: 8px;
+    margin-top: 18px;
+}
+
+.finalizar:hover{
+    cursor: pointer;
+    background-color: rgb(250, 94, 37);
+
+}
+
+.finalizar:active {
+    transform: translateY(4px);
+}
 
 
 /* --------------------- Outros -------------------------*/
